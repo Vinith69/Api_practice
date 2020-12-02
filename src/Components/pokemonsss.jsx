@@ -38,11 +38,11 @@ function PokemonComponent() {
 		fetchData();
 	}, [url, pokemonName]);
 
-	// const handleEvent = e => {
-	// 	if (e.charCode === 13) {
-	// 		setPokemonName(e.target.value);
-	// 	}
-	// };
+	const handleEvent = e => {
+		if (e.charCode === 13) {
+			setPokemonName(e.target.value);
+		}
+	};
 
 	// Extra
 	useEffect(() => {
@@ -51,9 +51,9 @@ function PokemonComponent() {
 				`https://pokeapi.co/api/v2/pokemon/?limit=1117`
 			);
 			const data = await res.json();
-			// console.log("pokemon Names:", data);
+			console.log("pokemon Names:", data);
 			setPokeResults(data.results);
-			// console.log(data.results);
+			console.log(data.results);
 		};
 		fetchNames();
 	}, [setPokeResults]);
@@ -77,26 +77,16 @@ function PokemonComponent() {
 	// If selected
 	const handleChange = e => {
 		setName(e);
-		if (e) {
-			setPokemonName(e.name);
-			// console.log("hello");
-		}
 	};
 
 	const customStyles = {
 		option: (provided, state) => ({
 			...provided,
 			// borderBottom: "1px dotted pink",
-			// color: state.isSelected ? "red" : "black",
+			// color: state.isSelected ? "red" : "blue",
 			color: "black",
-			padding: 10,
-			borderRadius: "1.8rem",
-			display: "inline-block",
-			fontSize: 20,
-			fontWeight: "normal",
-			lineHeight: "1",
-			minWidth: 1,
-			textAlign: "center",
+
+			padding: 20,
 		}),
 	};
 
@@ -115,7 +105,6 @@ function PokemonComponent() {
 					/> */}
 					<br />
 					<AsyncSelect
-						className="AsyncSelect"
 						placeholder="Enter a Pokemon"
 						styles={customStyles}
 						getOptionLabel={e => e.name}
@@ -123,7 +112,7 @@ function PokemonComponent() {
 						value={name}
 						cacheOptions
 						loadOptions={loadOptions}
-						// defaultOptions
+						defaultOptions
 						onInputChange={handleInputChange}
 						onChange={handleChange}
 					/>

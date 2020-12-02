@@ -10,10 +10,10 @@
 	color: white;
 }
 
-input {
+.AsyncSelect {
 	outline: none;
 	border: none;
-	padding: 0.8rem;
+
 	width: 20rem;
 	border-radius: 1rem;
 }

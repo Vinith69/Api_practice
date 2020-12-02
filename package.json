@@ -1,5 +1,5 @@
 {
-  "homepage":"https://Vinith69.github.io/Api_practice/",
+  "homepage": "https://Vinith69.github.io/Api_practice/",
   "name": "api-learning",
   "version": "0.1.0",
   "private": true,
@@ -10,11 +10,12 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
+    "react-select": "^3.1.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
